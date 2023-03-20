@@ -5,10 +5,47 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Semana 2 S1</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    
+    <h1>Ejercicio 1: Calcular hipotenusa</h1>
+    <form id="e1">
+        <label>
+            Cateto 1:
+            <input type="number" id="cateto1" name="cateto1" required min="0">
+        </label>
+        <label>
+            Cateto 2:
+            <input type="number" id="cateto2" name="cateto2" required min="0">
+        </label>
+        <input type="submit" value="Calcular">
+    </form>
+    <div>El resultado es: <div id="resultadoe1">No se ha realizado el calculo</div></div>
+    <h1>Ejercicio 2: Calculo indice masa corporal y riesgo</h1>
+    <form id="e2">
+        <label>
+            Edad:
+            <input type="number" id="edad" name="edad" required min="0">
+        </label>
+        <label>
+            Peso (en Kg):
+            <input type="number" step="0.01" id="peso" name="peso" required min="0">
+        </label>
+        <label>
+            Estatura (en metros):
+            <input type="number" step="0.01" id="estatura" name="estatura" required min="0">
+        </label>
+        <input type="submit" value="Calcular">
+        <div id="resultadoe2"></div>
+    </form>
+    <h1>Ejercicio 3: Suma primeros N naturales</h1>
+    <form id="e3">
+        <label>
+            n:
+            <input type="number" id="n" name="n" required min="1">
+        </label>
+        <input type="submit" value="Calcular">
+        <div id="resultadoe3"></div>
+    </form>
 </body>
 </html>
