@@ -30,6 +30,13 @@ function sumaPrimerosNNaturales(n: number): number {
     return suma;
 }
 
+/*
+Extras:
+    - Calcular la suma de los primeros n numeros pares
+    - Calcular la lista de los primeros n numeros Fibonacci
+    - Calcular la nota final de un estudiante dadas dos listas: Una con las notas, otra con los pesos de las notas
+*/
+
 function inicializarListeners(): void {
     const formE1 = document.getElementById("e1");
     if (!formE1) {
