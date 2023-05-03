@@ -14,62 +14,30 @@
 // Atributo/Metodo estatico
 // static
 
-class Usuario {
-    nombre: string;
-    email: string;
-    telefono: string;
-    edad?: number;
-    experiencias: Experiencia[];
+import { Experiencia } from "./experiencia.js";
+import { Usuario } from "./usuario.js";
 
-    constructor(nombre: string, email: string, telefono: string, experiencia: Experiencia, edad?: number) {
-        this.nombre = nombre;
-        this.email = email;
-        this.telefono = telefono;
-        this.edad = edad;
-        this.experiencias = [experiencia];
-    }
-
-    agregarExperiencia(e: Experiencia): void {
-        this.experiencias.push(e);
-    }
-}
-
-class Experiencia {
-    cargo: string;
-    empresa: string;
-    fechaInicial: Date;
-    fechaFinal?: Date;
-    descripcion: string;
-
-    constructor(cargo: string, empresa: string, descripcion: string, fechaInicial: Date, fechaFinal?: Date) {
-        this.cargo = cargo;
-        this.empresa = empresa;
-        this.descripcion = descripcion;
-        this.fechaInicial = fechaInicial;
-        this.fechaFinal = fechaFinal;
-    }
-
-    esTrabajoActual(): boolean {
-        return this.fechaFinal === undefined;
-    }
-
-    empezoDespuesDe(fecha: Date): boolean {
-        return fecha.getTime() < this.fechaInicial.getTime()
-    }
-}
-
+// Objeto:
+// Tiene las propiedades de la clase con un valor
+// Tiene los metodos, yo puedo llamar los metodos sobre el objeto
+// Puedo tener cualquier cantidad de objetos de la clase
+// Variable de tipo "Clase"
 const rappi = new Experiencia("Tech Lead", "Rappi", "Coordinar equipo", new Date("6/01/2020"), new Date("5/21/2022"))
+
 const atomicVest = new Experiencia("Software developer", "Atomic Invest", "Develop software", new Date("5/21/2022"))
 const usuario = new Usuario("Carlos Agudelo", "cf.agudelo12@uniandes.edu.co", "123456789", rappi);
-usuario.agregarExperiencia(atomicVest);
-console.log(usuario);
-console.log({atomic: atomicVest.esTrabajoActual(), rappi: rappi.esTrabajoActual()});
-const fechaPrueba = new Date("4/01/2022");
-console.log({
-    atomic: atomicVest.empezoDespuesDe(fechaPrueba),
-    rappi: rappi.empezoDespuesDe(fechaPrueba),
-});
 
+console.log(JSON.stringify(usuario));
+usuario.agregarExperiencia(atomicVest);
+console.log(JSON.stringify(usuario));
+usuario.setEmail("cf.agudelo123123@uniandes.edu.co")
+console.log(JSON.stringify(usuario));
+// console.log({atomic: atomicVest.esTrabajoActual(), rappi: rappi.esTrabajoActual()});
+// const fechaPrueba = new Date("4/01/2022");
+// console.log({
+//     atomic: atomicVest.empezoDespuesDe(fechaPrueba),
+//     rappi: rappi.empezoDespuesDe(fechaPrueba),
+// });
 
 // Como empresa que busca trabajadores, quiero poder publicar una nueva oportunidad de empleo
 // De una oportunidad de empleo, me interesa proporcionar la siguiente información:
